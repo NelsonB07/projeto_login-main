@@ -23,13 +23,16 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(../images/bg.png);
+    background-image: url(../images/city2.jpg);
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.63);
+
     transition: background-position 1s;
+    animation: slide 30s linear alternate-reverse;
+    animation-iteration-count: infinite;
     
 }
 .login-text-content h2 {
@@ -44,9 +47,103 @@ body {
 }
 .login-form {
     display: flex;
-    background-color: #fff;
-    flex: 1;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    flex: 1;
+}
+.login-form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    min-width: 70%;
+}
+.login-form-content img {
+    align-self: center;
+    margin-bottom: 35px;
+}
+.login-form-content a  {
+    align-self: flex-end;
+    text-decoration: none;
+    color: #0000ffcc;
+    margin-bottom: 20px;
+}
+.login-form-content a:hover{
+    color: #00B7BC;
+}
+.login-form-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.login-form-content img {
+    align-self: center;
+    margin-bottom: 35px;
+}
+form input {
+    width: 97%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: solid 1px #CCCCCC;
+    border-radius: 5px;
+    color: rgb(97, 96, 96);
+}
+form button {
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #0B9DCA 0%, #00B7BC 100%);
+    color: white;
+    cursor: pointer;
+    border: none;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.096);
+}
+form button:hover {
+    background: linear-gradient(180deg, #0B9DCA 0%, #00B7BC 100%);
+}
+.login-form-devider {
+    columns:  rgb(189, 189, 189);
+    border-bottom: solid 1px rgb(189, 189, 189);
+    align-items: stretch;
+}
+.login-form-devider div {
+    position: relative;
+    width: 150px;
+    top: 10px;
+    left: calc(50% - 75px);
+    text-align: center;
+    background-color: white;
+    
+}
+.login-form-google {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+    height: 50px;
+}
+#google-container {
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: solid 1px rgb(228, 228, 228);
+    border-radius: 5px;
+    padding: 20px;
+}
+#google-icon{
+    background-image: url(../images/google.svg);
+    width: 50px;
+    height: 50px;
+}
+.login-form-subscribe {
+    text-align: center;
+}
+#github {
+    text-align: center;
+    padding-top: 50px;
 }
 
 /*Animação GB*/
@@ -56,11 +153,31 @@ body {
     }
     100% {
         background-position: 100% 0;
-    }
-    
-    
+    }    
 }
-.login-text {
-    animation: slide 30s linear alternate-reverse;
-    animation-iteration-count: infinite;
+
+@media screen and (max-width:768px){
+    .login-container {
+        flex-direction: column;
+
+    }
+    .login-text {
+        flex: 1;
+    }
+    .login-text-content h2 {
+        font-size: 1.6em;
+    }
+    .login-text-content p {
+        font-size: 1.1em;
+    }
+    .login-form {
+        flex: 3;
+    }
+    .login-form-content{
+        min-width: 85%;
+    }
+    #github {
+        text-align: center;
+        padding-top: 50px;
+    }
 }
