@@ -23,7 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(../images/city2.jpg);
+    background-image: url(../images/fundo_.jpg);
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -79,7 +79,8 @@ body {
 }
 .login-form-content img {
     align-self: center;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
+
 }
 form input {
     width: 97%;
