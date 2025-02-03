@@ -63,13 +63,15 @@ body {
     align-self: center;
     margin-bottom: 35px;
 }
-.login-form-content a  {
+.login-form-content a {
+    
     align-self: flex-end;
     text-decoration: none;
     color: #0000ffcc;
     margin-bottom: 20px;
 }
 .login-form-content a:hover{
+
     color: #00B7BC;
 }
 .login-form-content form {
