@@ -173,6 +173,10 @@ form button:hover {
     padding-top: 50px;
 }
 
+.error {
+    border-color: red !important; 
+}
+
 /*Animação GB*/
 @keyframes slide {
     0% {
@@ -183,13 +187,13 @@ form button:hover {
     }    
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .login-container {
         flex-direction: column;
 
     }
     .login-text {
-        flex: 1;
+        flex: 3;
     }
     .login-text-content h2 {
         font-size: 1.6em;
@@ -200,8 +204,9 @@ form button:hover {
     .login-form {
         flex: 3;
     }
-    .login-form-content{
-        min-width: 85%;
+    .login-form-content,
+    .sign-up-form-content {
+        min-width: 90%;
     }
     #github {
         text-align: center;

@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const signUpLink = document.querySelector('.login-form-subscribe a'); 
     const loginLink = document.querySelector('.sign-up-form-subscribe a'); 
+    const loginForm = document.querySelector('#login'); 
+    const signUpForm = document.querySelector('#sign-up'); 
+    const loginErrorMessage = document.querySelector('#login-error-message'); 
+    const signUpErrorMessage = document.querySelector('#sign-up-error-message'); 
 
     const showFormSignUp = () => {
         document.querySelector(".login-form").style.display = "none";
@@ -29,4 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); 
         showFormLogin();
     });
+
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+         
+    });
+
+    signUpForm.addEventListener('submit', function (event) {
+        event.preventDefault(); 
+        
+    }); 
 });

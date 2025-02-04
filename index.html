@@ -13,9 +13,12 @@
 <div class="login-container">
     <div class="sign-up-form">
         <div class="sign-up-form-content">
-            <form>
+            <form id="sign-up">
             <img src="public/images/logo_nb.png" alt="Logo Nelson" width="100px">
-            <h3>Crie sua conta</h3> 
+            <h3>Crie sua conta</h3>
+            <div
+                id="sing-up-error-message"
+                style="display:none; color: red"></div>
             <input type="text" name="name" id="name" placeholder="Nome">
             <input type="email" name="email" id="email" placeholder="E-mail">
             <input type="password" name="password" id="password" placeholder="Senha">
@@ -45,13 +48,17 @@
     </div>
     <div class="login-form">
         <div class="login-form-content">
-            <img src="public/images/logo_nb.png" alt="Logo Nelson" width="100px">
-            <h3>Faça seu login</h3>
-            <form action=""> 
-                <input type="email" name="email" id="" placeholder="E-mail" autocomplete="email">
-                <input type="password" name="password" id="" placeholder="Senha" autocomplete="current-password"> 
-                <a href="#">Esqueci minha senha</a>
-                <button>Entrar</button>
+            <form id="login"> 
+                <img src="public/images/logo_nb.png" alt="Logo Nelson" width="100px">
+                <h3>Faça seu login</h3>
+                <div
+                    id="login-error-message"
+                    style="display:none; color: red"></div>
+            
+                    <input type="email" name="email" id="" placeholder="E-mail" autocomplete="email">
+                    <input type="password" name="password" id="" placeholder="Senha" autocomplete="current-password"> 
+                    <a href="#">Esqueci minha senha</a>
+                    <button type="submit">Entrar</button>
             </form>
             <div class="login-form-devider">
                 <div>ou faça login com</div>
