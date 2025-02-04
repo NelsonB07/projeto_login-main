@@ -52,25 +52,37 @@ body {
     height: 100vh;
     flex: 1;
 }
-.login-form-content {
+
+.sign-up-form {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex: 1;
+}
+
+.login-form-content,
+.sign-up-form-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    min-width: 70%;
+    width: 70%;
 }
 .login-form-content img {
     align-self: center;
     margin-bottom: 35px;
 }
-.login-form-content a {
+.login-form-content a,
+.sign-up-form-content a {
     
     align-self: flex-end;
     text-decoration: none;
     color: #0000ffcc;
     margin-bottom: 20px;
 }
-.login-form-content a:hover{
+.login-form-content a:hover, 
+.sign-up-form-content a:hover {
 
     color: #00B7BC;
 }
@@ -84,6 +96,16 @@ body {
     margin-bottom: 15px;
 
 }
+.sign-up-form-content h3{
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.sign-up-form-content img {
+    display: flex;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
 form input {
     width: 97%;
     margin-bottom: 10px;
@@ -141,7 +163,8 @@ form button:hover {
     width: 50px;
     height: 50px;
 }
-.login-form-subscribe {
+.login-form-subscribe,
+.sign-up-form-subscribe {
     text-align: center;
 }
 #github {
