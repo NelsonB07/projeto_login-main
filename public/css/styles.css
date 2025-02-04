@@ -23,7 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(../images/fundo_.jpg);
+    background-image: url(../images/fundoBack.jpg);
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -160,6 +160,7 @@ form button:hover {
 }
 #google-icon{
     background-image: url(../images/google.svg);
+    background-repeat: no-repeat;
     width: 50px;
     height: 50px;
 }
