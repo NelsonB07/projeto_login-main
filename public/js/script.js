@@ -36,7 +36,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
-         
+        const emailInput = this.querySelector('#login input[name="email"]');
+        const passwordInput = this.querySelector('#login input[name="password"]'); 
+        let errors = [];
+
+        if (passwordInput.value.trim().length < 8) {
+            passwordInput.classList.add("error"); 
+            errors.push("Senha deve conter pelo menos 8 caracteres."); 
+        } else {
+            passwordInput.classList.remove("error"); 
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+        if (!emailRegex.test(emailInput.value.trim())) {
+            emailInput.classList.add("error"); 
+            errors.push("Email Inválido.");
+        } else {
+            emailInput.classList.remove("error");
+        }
+
+        if (errors.length > 0) {
+            // mostrar errors 
+        } else {
+            // submit servidor
+        }
     });
 
     signUpForm.addEventListener('submit', function (event) {
