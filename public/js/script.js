@@ -61,6 +61,28 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             loginErrorMessage.style.display = "none";
             loginErrorMessage.innerText = ""; 
+
+            const userData = {
+                email: emailInput.value.trim(),
+                password: passwordInput.value.trim()
+            };
+
+            fetch(
+                `http://localhost:4000/users?email=${emailInput.value}&password=${passwordInput.value}`
+            )
+            .then((response) => response.json())
+            .then((users) => {
+                if(users.length > 0) {
+                    window.location = "https://github.com/NelsonB07";
+                } else {
+                    loginErrorMessage.style.display = "block";
+                    loginErrorMessage.style.innerText = "E-email ou Senha incorretos!"; 
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error); 
+            }); 
+
         }
     });
 
@@ -109,6 +131,30 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             signUpErrorMessage.style.display = "none";
             signUpErrorMessage.innerText = ""; 
+
+            const userData = {
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim(),
+                password: passwordInput.value.trim()
+            };
+
+            fetch("http://localhost:4000/users", {
+                method: "POST", 
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(userData), 
+            })
+                .then((response) => response.json)
+                .then((data) => {
+                    console.log("Sucess", data); 
+                    alert("Cadastro realizado com sucesso!");
+                    signUpForm.reset(); 
+                    showFormLogin(); 
+            })
+            .catch((error) => {
+                console.error("Error:", error); 
+            }); 
         }
     }); 
 });
