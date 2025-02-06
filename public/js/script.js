@@ -50,20 +50,65 @@ document.addEventListener('DOMContentLoaded', function() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
         if (!emailRegex.test(emailInput.value.trim())) {
             emailInput.classList.add("error"); 
-            errors.push("Email Inválido.");
+            errors.push("Email Inválido!");
         } else {
             emailInput.classList.remove("error");
         }
 
         if (errors.length > 0) {
-            // mostrar errors 
+            loginErrorMessage.style.display = "block"; 
+            loginErrorMessage.innerText = errors.join("\n"); 
         } else {
-            // submit servidor
+            loginErrorMessage.style.display = "none";
+            loginErrorMessage.innerText = ""; 
         }
     });
 
     signUpForm.addEventListener('submit', function (event) {
         event.preventDefault(); 
+        const nameInput = this.querySelector('#sign-up input[name="name"]');
+        const emailInput = this.querySelector('#sign-up input[name="email"]');
+        const passwordInput = this.querySelector('#sign-up input[name="password"]'); 
+        const rePasswordInput = this.querySelector('#sign-up input[name="re-password"]'); 
         
+        let errors = [];
+
+        if (nameInput.value.trim() === "") {
+            nameInput.classList.add("error"); 
+            errors.push("Preencha o nome!");
+        } else {
+            nameInput.classList.remove("error");
+        }
+        
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+        if (!emailRegex.test(emailInput.value.trim())) {
+            emailInput.classList.add("error"); 
+            errors.push("Email Inválido!");
+        } else {
+            emailInput.classList.remove("error");
+        }
+
+        if (passwordInput.value.trim().length < 8) {
+            passwordInput.classList.add("error"); 
+            errors.push("Senha deve conter pelo menos 8 caracteres."); 
+        } else {
+            passwordInput.classList.remove("error"); 
+        }
+
+        if(passwordInput.value !== rePasswordInput.value) {
+            rePasswordInput.classList.add("error"); 
+            errors.push("As Senhas não conferem."); 
+        } else {
+            rePasswordInput.classList.remove("error"); 
+        } 
+
+        if (errors.length > 0) {
+            signUpErrorMessage.style.display = "block"; 
+            signUpErrorMessage.innerText = errors.join("\n"); 
+        } else {
+            signUpErrorMessage.style.display = "none";
+            signUpErrorMessage.innerText = ""; 
+        }
     }); 
 });
